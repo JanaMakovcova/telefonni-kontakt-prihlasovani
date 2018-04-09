@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../../static/css/styly.css"
+          th:href="${'../css/styly.css'}"/>
+    <link rel="icon" href="../../static/images/favicon.png"
+          th:href="${'../images/favicon.png'}"/>
+    <title>Telefonní seznam</title>
+</head>
+<body>
+    <!--/*@thymesVar id="kontakt" type="cz.czechitas.webapp.TelefonniKontakt"*/-->
+
+    <div class="page">
+
+        <h1>Telefonní záznam</h1>
+        <form method="post">
+        <table>
+            <tr>
+                <td>Číslo</td>
+                <td th:text="${kontakt.id}">1000</td>
+            </tr>
+            <tr>
+                <td>Jméno</td>
+                <td>
+                    <input name="jmeno" value="Krteček"
+                           th:value="${kontakt.jmeno}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Město</td>
+                <td>
+                    <input name="mesto" value="Praha"
+                        th:value="${kontakt.mesto}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Stát</td>
+                <td>
+                    <input name="stat" value="Česko"
+                           th:value="${kontakt.stat}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Telefonní číslo</td>
+                <td>
+                        <input name="telefon" value="+420123456789"
+                               th:value="${kontakt.telefon}"/>
+                </td>
+            </tr>
+            <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Uložit změny">
+            </td>
+            </tr>
+        </table>
+        </form>
+
+        <a th:href="${'.'}" href="index.html">Zpět</a>
+
+    </div>
+</body>
+</html>

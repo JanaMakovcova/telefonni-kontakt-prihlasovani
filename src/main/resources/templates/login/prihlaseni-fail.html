@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../../static/css/styly.css"
+          th:href="${'../css/styly.css'}"/>
+    <link rel="icon" href="../../static/images/favicon.png"
+          th:href="${'../images/favicon.png'}"/>
+    <title>Přihlášení neúspěšné</title>
+</head>
+<body>
+    <div class="page">
+        <h1>Přihlaste se znovu</h1>
+
+        <div class="chyba">
+            Neplatné jméno nebo heslo
+        </div>
+
+        <form method="post">
+            <table>
+                <tr>
+                    <td>
+                        <label for="jmeno">Email:</label>
+                    </td>
+                    <td>
+                        <input id="jmeno" name="email"
+                               value=""/>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="hes">Heslo:</label>
+                    </td>
+                    <td>
+                        <input id="hes" name="heslo" type="password"/>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Přihlásit se"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="zapomenute-heslo.html">Zapomenuté heslo</a>
+                    </td>
+                    <td>
+                        <a th:href="${'registrace.html'}"href="registrace.html">Nová registrace</a>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
