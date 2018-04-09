@@ -107,7 +107,7 @@ public class HlavniController {
         return drzakNaData;
     }
     @RequestMapping(value = "/login/registrace.html", method = RequestMethod.POST)
-    public ModelAndView zpracujRegistrace(@Valid RegistraceForm vyplnenaRegistrace, BindingResult validacniChyby) {
+    public ModelAndView zpracujRegistrace(@Valid @ModelAttribute("registrace") RegistraceForm vyplnenaRegistrace, BindingResult validacniChyby) {
 
         if (validacniChyby.hasErrors()){
             ModelAndView drzakNaDataChyby;

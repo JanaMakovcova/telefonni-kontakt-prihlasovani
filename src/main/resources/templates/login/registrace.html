@@ -27,7 +27,7 @@
                         <input id="jm" name="krestniJmeno"
                                placeholder="zadej křestní jméno" th:field="*{krestniJmeno}" />
                     </td>
-                    <td th:if="${#fields.hasErrors('krestniJmeno')}" th:errors="*{krestniJmeno}"></td>
+                    <td class="chyba" th:if="${#fields.hasErrors('krestniJmeno')}" th:errors="*{krestniJmeno}"></td>
 
                 </tr>
                 <tr>
@@ -37,7 +37,7 @@
                     <td>
                         <input id="prijm" name="prijmeni" placeholder="zadej příjmení" th:field="*{prijmeni}" />
                     </td>
-                    <td th:if="${#fields.hasErrors('prijmeni')}" th:errors="*{prijmeni}">Name Error</td>
+                    <td class="chyba" th:if="${#fields.hasErrors('prijmeni')}" th:errors="*{prijmeni}">Name Error</td>
 
                 </tr>
                 <tr>
@@ -47,7 +47,7 @@
                     <td>
                         <input id="em" name="email" placeholder="zadej e-mail" th:field="*{email}" />
                     </td>
-                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
+                    <td class="chyba" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
 
                 </tr>
                 <tr>
@@ -57,7 +57,7 @@
                     <td>
                         <input id="hes" name="heslo" type="password" placeholder="zadej heslo" th:field="*{heslo}" />
                     </td>
-                    <td th:if="${#fields.hasErrors('heslo')}" th:errors="*{heslo}">Name Error</td>
+                    <td class="chyba" th:if="${#fields.hasErrors('heslo')}" th:errors="*{heslo}">Name Error</td>
 
                 </tr>
                 <tr>
@@ -67,7 +67,8 @@
                     <td>
                         <input id="hes2" name="hesloZnovu" type="password" placeholder="zadej heslo znovu" th:field="*{hesloZnovu}" />
                     </td>
-                    
+                    <td class="chyba" th:if="${#fields.hasErrors('hesloZnovu')}" th:errors="*{hesloZnovu}">Name Error</td>
+
                 </tr>
                 <tr>
                     <td>&nbsp;</td>

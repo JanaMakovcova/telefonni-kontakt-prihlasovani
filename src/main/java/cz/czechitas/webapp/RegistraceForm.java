@@ -4,18 +4,18 @@ import javax.validation.constraints.*;
 
 public class RegistraceForm {
     
-    @Size(min=2, max = 30)
+    @Size(min=2, max = 30, message="Zadej minimálně 2 a maximálně 30 znaků")
     private String krestniJmeno;
-    @Size(min=2, max = 30)
+    @Size(min=2, max = 30, message="Zadej minimálně 2 a maximálně 30 znaků")
     private String prijmeni;
     @NotNull
-    @Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+    @Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",message="Emailová adresa je zadaná špatně" )
     private String email;
     @NotNull
-    @Size(min=2, max = 30)
+    @Size(min=2, max = 30, message="Zadej minimálně 2 a maximálně 30 znaků")
     private String heslo;
     @NotNull
-    @Size(min=2, max = 30)
+    @Size(min=2, max = 30, message="Zadej minimálně 2 a maximálně 30 znaků")
     private String hesloZnovu;
 
     public RegistraceForm() {
