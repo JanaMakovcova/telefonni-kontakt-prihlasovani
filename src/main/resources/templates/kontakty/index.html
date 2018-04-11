@@ -18,13 +18,15 @@
         <h1>Telefonní seznam</h1>
 
         <table>
+            <thead>
             <tr>
-                <td>Číslo</td>
-                <td>Osoba</td>
-                <td>Stát</td>
-                <td>Telefon</td>
-                <td>Akce</td>
+                <th>Číslo</th>
+                <th>Osoba</th>
+                <th>Stát</th>
+                <th>Telefon</th>
+                <th>Akce</th>
             </tr>
+            </thead>
             <tr th:each="kontakt : ${seznam}">
                 <td th:text="${kontakt.id}">1000</td>
                 <td th:text="${kontakt.jmeno}">Krteček</td>

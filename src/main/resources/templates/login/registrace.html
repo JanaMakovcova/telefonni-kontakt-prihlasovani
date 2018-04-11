@@ -15,68 +15,53 @@
     <!--/*@thymesVar id="registrace" type="java.util.List<cz.czechitas.webapp.RegistraceForm>"*/-->
 
     <div class="page">
-        <h1>Zaregistrujte se</h1>
+        <h1 class="flex-outer">Registrace</h1>
         <p class="chyba" th:text="${chybnyUdaj}"></p>
         <form action="#" th:action="@{'../login/registrace.html'}" th:object="${registrace}"method="post">
-            <table>
-                <tr>
-                    <td>
-                        <label for="jm">Křestní jméno:</label>
-                    </td>
-                    <td>
-                        <input id="jm" name="krestniJmeno"
+            <ul class="flex-outer">
+                <li>
+                    <label for="jm">Jméno:</label>
+                    <input id="jm" name="krestniJmeno"
                                placeholder="zadej křestní jméno" th:field="*{krestniJmeno}" />
-                    </td>
-                    <td class="chyba" th:if="${#fields.hasErrors('krestniJmeno')}" th:errors="*{krestniJmeno}"></td>
+                </li>
+                <li>
+                    <div class="flex-inner chyba-form" th:if="${#fields.hasErrors('krestniJmeno')}" th:errors="*{krestniJmeno}"></div>
+                </li>
+                <li>
+                    <label for="prijm">Příjmení:</label>
+                    <input id="prijm" name="prijmeni" placeholder="zadej příjmení" th:field="*{prijmeni}" />
+                </li>
+                <li>
+                    <div class="flex-inner chyba-form" th:if="${#fields.hasErrors('prijmeni')}" th:errors="*{prijmeni}">Name Error</div>
+                </li>
+                <li>
+                    <label for="em">Email:</label>
+                    <input id="em" name="email" placeholder="zadej e-mail" th:field="*{email}" />
+                </li>
+                <li>
+                    <div class="flex-inner chyba-form" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</div>
 
-                </tr>
-                <tr>
-                    <td>
-                        <label for="prijm">Příjmení:</label>
-                    </td>
-                    <td>
-                        <input id="prijm" name="prijmeni" placeholder="zadej příjmení" th:field="*{prijmeni}" />
-                    </td>
-                    <td class="chyba" th:if="${#fields.hasErrors('prijmeni')}" th:errors="*{prijmeni}">Name Error</td>
+                </li>
+                <li>
+                    <label for="hes">Heslo:</label>
+                    <input id="hes" name="heslo" type="password" placeholder="zadej heslo" th:field="*{heslo}" />
+                </li>
+                <li>
+                    <div class="flex-inner chyba-form" th:if="${#fields.hasErrors('heslo')}" th:errors="*{heslo}">Name Error</div>
+                </li>
+                <li>
+                    <label for="hes2">Heslo (znovu):</label>
+                    <input id="hes2" name="hesloZnovu" type="password" placeholder="zadej heslo znovu" th:field="*{hesloZnovu}" />
+                </li>
+                <li>
+                    <span class="flex-inner chyba-form" th:if="${#fields.hasErrors('hesloZnovu')}" th:errors="*{hesloZnovu}">Name Error</span>
 
-                </tr>
-                <tr>
-                    <td>
-                        <label for="em">Email:</label>
-                    </td>
-                    <td>
-                        <input id="em" name="email" placeholder="zadej e-mail" th:field="*{email}" />
-                    </td>
-                    <td class="chyba" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Name Error</td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <label for="hes">Heslo:</label>
-                    </td>
-                    <td>
-                        <input id="hes" name="heslo" type="password" placeholder="zadej heslo" th:field="*{heslo}" />
-                    </td>
-                    <td class="chyba" th:if="${#fields.hasErrors('heslo')}" th:errors="*{heslo}">Name Error</td>
-
-                </tr>
-                <tr>
-                    <td>
-                        <label for="hes2">Heslo (znovu):</label>
-                    </td>
-                    <td>
-                        <input id="hes2" name="hesloZnovu" type="password" placeholder="zadej heslo znovu" th:field="*{hesloZnovu}" />
-                    </td>
-                    <td class="chyba" th:if="${#fields.hasErrors('hesloZnovu')}" th:errors="*{hesloZnovu}">Name Error</td>
-
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <input type="submit" value="Zaregistrovat se"/>
-                    </td>
-                </tr>
-            </table>
+                </li>
+                <li>
+                        <input id="buttonSumbit" type="submit" value="Zaregistrovat se"/>
+                    
+                </li>
+            </ul>
         </form>
     </div>
 </body>
